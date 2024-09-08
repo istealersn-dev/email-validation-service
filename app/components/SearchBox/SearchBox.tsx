@@ -52,7 +52,7 @@ export const SearchBox = ({ onSearch }: SearchBoxProps) => {
             autoComplete="off"
             className="text-base w-[30rem] h-[3rem] pl-6 rounded-lg text-background border-none"
         />
-        {error && <div className="error-message">{error}</div>}
+        {error && <div className="text-red-500">{error}</div>}
         </div>
         <div className="grid place-content-center mt-10">
             <button 
