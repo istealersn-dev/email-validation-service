@@ -6,9 +6,16 @@ interface SearchBoxProps {
   onSearch: (query: string) => void;
 }
 
-export const SearchBox = ({ onSearch }: SearchBoxProps) => {
+/**
+ * A reusable search box component that validates email addresses.
+ *
+ * @param {function} onSearch - A callback function to handle the search query.
+ * @return {JSX.Element} The search box component.
+ */
 
-    const [query, setQuery] = useState('');
+export const SearchBox = ({ onSearch }: SearchBoxProps): JSX.Element => {
+
+    const [query, setQuery] = useState<string>('');
     const [error, setError] = useState<string | null>(null);
 
     const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -22,7 +29,7 @@ export const SearchBox = ({ onSearch }: SearchBoxProps) => {
             }
     };
 
-    const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
+    const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
       event.preventDefault();
 
       const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
