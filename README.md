@@ -1,36 +1,43 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+
+# Email Validation Service
+
+A web application that validates email addresses and provides MX record information.
+
+  
 
 ## Getting Started
 
-First, run the development server:
+To run the application, follow these steps:
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+ 1. Clone the repository: `git clone https://github.com/your-username/your-repo-name.git`
+2. Install dependencies: `npm install` or `yarn install`
+3. Start the development server: `npm run dev` or `yarn dev`
+4. Open your browser and navigate to `http://localhost:3000`
+  
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Features
+- Validate email addresses
+- Retrieve MX record information for a given domain
+- Display search results in a user-friendly format
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## How it Works
 
-## Learn More
+1. Enter an email address in the search bar
+2. Click the "Search" button to validate the email address and retrieve MX record information
+3. View the search results, including the email address, domain, and MX records with IP addresses
 
-To learn more about Next.js, take a look at the following resources:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Technical Details
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+ - Built with Next.js and React
+ - Uses the `next/font` module for font optimization
+ - Utilizes the `geist` font family for a clean and modern design
 
-## Deploy on Vercel
+  
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Contributing
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Contributions are welcome! If you'd like to report a bug or suggest a feature, please open an issue on the GitHub repository.
+
+Feel free to modify this draft to fit your specific needs and branding. Good luck with your project!
