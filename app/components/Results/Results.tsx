@@ -12,9 +12,10 @@ interface ResultsProps {
     };
   }
 
-  export const Results = ({ mxResult }: ResultsProps) => {
-    if (!mxResult) return null;
+  export const Results = ({ mxResult }: ResultsProps): JSX.Element => {
+    if (!mxResult) null;
     if ( !mxResult.success ) return <p>{mxResult.message}</p>;
+    
   return (
     <div>
       {mxResult.success ? (

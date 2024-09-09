@@ -77,7 +77,7 @@ export const SearchBox = ({ onSearch }: SearchBoxProps): JSX.Element => {
             <button 
                 type="submit" 
                 className="text-base font-semibold w-60 h-12 rounded-lg border-none cursor-pointer bg-foreground text-background transition transform duration-300 ease-in hover:text-foreground hover:bg-background hover:border-2 hover:border-solid hover:border-stone-400 hover:transform hover:-translate-y-1 active:transform active:translate-y-0 active:bg-black">
-                    Validate
+                    Search
                 </button>
         </div>
       </form>
