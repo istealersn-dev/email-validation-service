@@ -13,6 +13,8 @@ interface ResultsProps {
   }
 
   export const Results = ({ mxResult }: ResultsProps) => {
+    if (!mxResult) return null;
+    if ( !mxResult.success ) return <p>{mxResult.message}</p>;
   return (
     <div>
       {mxResult.success ? (

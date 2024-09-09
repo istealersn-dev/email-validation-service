@@ -18,7 +18,22 @@ export default function Home() {
 
   const [mxResult, setmxResult] = useState<mxResultProps>()
 
-  const handleSearch = async (searchTerm: string) => {
+  /**
+   * Handles the search for the MX records of a domain.
+   * @param {string} searchTerm - The email address to search for.
+   * @returns {Promise<void>} A promise that resolves when the search is complete.
+   */
+  const handleSearch = async (searchTerm: string): Promise<void> => {
+    if (!searchTerm.trim()) {
+      setmxResult({ 
+        success: false,
+        domain: '',
+        mxRecordsWithIPs: [],
+        message: 'No results available.'
+      });
+      return;
+    }
+
     console.log('Performing the search', searchTerm)
     
     try {

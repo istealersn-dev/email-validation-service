@@ -17,6 +17,7 @@ export const SearchBox = ({ onSearch }: SearchBoxProps): JSX.Element => {
 
     const [query, setQuery] = useState<string>('');
     const [error, setError] = useState<string | null>(null);
+    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
     const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
         setQuery(event.target.value);
@@ -24,15 +25,25 @@ export const SearchBox = ({ onSearch }: SearchBoxProps): JSX.Element => {
             // Clear error if input is not empty
             if (query.trim() === '') {
                 setError(null);
-            } else {
-                setError(null); // Optionally clear error while typing
+                return
+            }
+
+            // Clear error if input is not a valid email
+            if (!emailPattern.test(query)) {
+                setError(null);
+                return
             }
     };
 
-    const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
+        /**
+     * Handles the form submission event by validating the email address and triggering the search query.
+     *
+     * @param {React.FormEvent<HTMLFormElement>} event - The form submission event.
+     * @return {Promise<void>} No return value, but triggers the onSearch callback with the validated query.
+     */
+    const handleSubmit = async (event: React.FormEvent<HTMLFormElement>): Promise<void> => {
       event.preventDefault();
 
-      const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
       if (query.trim() === '') {
         setError('Email address cannot be empty.');
         return;
@@ -40,9 +51,10 @@ export const SearchBox = ({ onSearch }: SearchBoxProps): JSX.Element => {
 
       if (!emailPattern.test(query)) {
         setError('Please enter a valid email address.');
+        return
       }
 
-      onSearch(query)
+      onSearch(query);
     }
 
   return (
